@@ -1,5 +1,5 @@
 local numbers = {}
-local previous
+local previous = 0
 local input = io.read()
 os.execute("clear")
 for number in string.gmatch(input, '([^,]+)') do
@@ -10,10 +10,8 @@ table.sort(numbers, function(a,b)
 end)
 
 for i, v in pairs(numbers) do
-if not previous then
-previous = v
-end
 previous = previous+v
 end
+previous = previous/#numbers
 
-print(“The mean is: “ .. previous)
+print([[The mean is:]] .. previous)
