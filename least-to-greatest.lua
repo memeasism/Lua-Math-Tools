@@ -1,6 +1,5 @@
 local numbers = {}
 local input = io.read()
-os.execute("clear")
 for number in string.gmatch(input, '([^,]+)') do
 	table.insert(numbers, tonumber(number))	
 end
